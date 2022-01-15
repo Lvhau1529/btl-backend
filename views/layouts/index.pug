@@ -10,7 +10,8 @@ html(lang="en")
 		link(href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap' rel='stylesheet')
 		link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
 		link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
-
+		link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")
+		link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css")
 		link(rel='stylesheet' href='/css/open-iconic-bootstrap.min.css')
 		link(rel='stylesheet' href='/css/animate.css')
 		link(rel='stylesheet' href='/css/owl.carousel.min.css')
@@ -22,66 +23,70 @@ html(lang="en")
 		link(rel='stylesheet' href='/css/jquery.timepicker.css')
 		link(rel='stylesheet' href='/css/flaticon.css')
 		link(rel='stylesheet' href='/css/icomoon.css')
-		link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")
-		link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css")
 		link(rel='stylesheet' href='/css/style.css')
-		link(rel='stylesheet' href='../../public/views/index.css')
+		link(rel="stylesheet" href="/css/custom.css")
 
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
 
 	body
-		.py-1.bg-info
-			.container
-				.row.no-gutters.d-flex.align-items-start.align-items-center.px-md-0
-					.col-lg-12.d-block
-						.row.d-flex
-							.col-md.pr-4.d-flex.topper.align-items-center
-								.icon.mr-2.d-flex.justify-content-center.align-items-center
-									span.icon-phone2
-								span.text +84 397 243 603
-							.col-md.pr-4.d-flex.topper.align-items-center
-								.icon.mr-2.d-flex.justify-content-center.align-items-center
-									span.icon-paper-plane
-								span.text 621173@sv.vnua.edu.vn
-							.col-md-5.pr-4.d-flex.topper.align-items-center.text-lg-right
-								if(session)
-									span.text
-										span Xin chào, 
-											span= user.username
-										span &nbsp;/&nbsp;
-										span
-										a(href="/logout" style="color: #fff") Thoát
-								else
-									span.text
-										span
-											a(href="/register" style="color: #fff") Đăng ký
-										span &nbsp;/&nbsp;
-										span
-										a(href="/auth/login" style="color: #fff") Đăng nhập
-
-		nav#ftco-navbar.navbar.navbar-expand-lg.navbar-dark.ftco_navbar.bg-dark.ftco-navbar-light
+		//- .py-1.bg-info
+		//- 	.container
+		//- 		.row.no-gutters.d-flex.align-items-start.align-items-center.px-md-0
+		//- 			.col-lg-12.d-block
+		//- 				.row.d-flex
+		//- 					.col-md.pr-4.d-flex.topper.align-items-center
+		//- 						.icon.mr-2.d-flex.justify-content-center.align-items-center
+		//- 							span.icon-phone2
+		//- 						span.text +84 397 243 603
+		//- 					.col-md.pr-4.d-flex.topper.align-items-center
+		//- 						.icon.mr-2.d-flex.justify-content-center.align-items-center
+		//- 							span.icon-paper-plane
+		//- 						span.text 621173@sv.vnua.edu.vn
+		//- 					.col-md-5.pr-4.d-flex.topper.align-items-center.text-lg-right
+		//- 						if(session)
+		//- 							span.text
+		//- 								span Xin chào, 
+		//- 									span= user.username
+		//- 								span &nbsp;/&nbsp;
+		//- 								span
+		//- 								a(href="/logout" style="color: #fff") Thoát
+		//- 						else
+		//- 							span.text
+		//- 								span
+		//- 									a(href="/register" style="color: #fff") Đăng ký
+		//- 								span &nbsp;/&nbsp;
+		//- 								span
+		//- 								a(href="/auth/login" style="color: #fff") Đăng nhập
+		nav#ftco-navbar.navbar.navbar-expand-lg.navbar-dark.ftco_navbar.bg-dark.ftco-navbar-light.py-2
 			.container
 				a.navbar-brand(href='/')
-					img#logo(src="/image/logo-batdongsan.png" alt="No Images")
+					img#logo(src="/image/logo.svg" alt="No Images")
 				button.navbar-toggler(type='button' data-toggle='collapse' data-target='#ftco-nav' aria-controls='ftco-nav' aria-expanded='false' aria-label='Toggle navigation')
 					span.oi.oi-menu &nbsp;Menu
-				#ftco-nav.collapse.navbar-collapse
-					ul.navbar-nav.ml-auto
+				#ftco-nav.collapse.navbar-collapse.justify-content-center
+					ul.navbar-nav
 						li#home.nav-item
 							a.nav-link(href='/') Trang chủ
-						li#about.nav-item
-							a.nav-link(href='/about') Giới thiệu
 						li#products.nav-item
-							a.nav-link(href='/products/load=scvH45jas') Nhà cho thuê
+							a.nav-link(href='/products/load=scvH45jas') Danh sách
 						li#news.nav-item
 							a.nav-link(href='/news') Tin tức
+						li#about.nav-item
+							a.nav-link(href='/about') Về chúng tôi
 						li.nav-item
 							a.nav-link(href='#contact') Liên hệ
-						li.nav-item
-							form.search-form(action='/search' method="GET")
-								.form-group
-									span.icon.ion-ios-search
-									input.form-control(type='text' name='key')
+				.nav-login.d-flex.align-items-center.justify-content-between(style="transform: translateY(4px);")
+					span.text
+						span
+							a(href="/register") Đăng ký
+						span &nbsp;|&nbsp;
+						span
+						a(href="/auth/login") Đăng nhập
+						//- li.nav-item
+						//- 	form.search-form(action='/search' method="GET")
+						//- 		.form-group
+						//- 			span.icon.ion-ios-search
+						//- 			input.form-control(type='text' name='key')
 
 		block content
 

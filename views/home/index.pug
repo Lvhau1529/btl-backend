@@ -3,38 +3,46 @@ block content
   section.ftco-section.ftco-category
     .container
       .row
+        .banner
+          .banner-title.d-flex.justify-content-center 
+            h1 Tìm phòng trọ và căn hộ phù hợp với bạn
+          img.banner-img(src="image/hero-banner.svg" alt="Image Banner")
+      .row
+        .col-md-12
+          .slide.my-4
+            .silde-title
+              h3 Khám phá các thành phố nổi tiếng nhất của chúng tôi
+            .silde-subtitle.text-center 
+              p Xem những thành phố này có gì để cung cấp và thuê một nơi hoàn hảo
         .col-md-8
           .row
             .col-md-6.order-md-last.align-items-stretch.d-flex
-              .category-wrap-2.ftco-animate.img(style='background-image: url(image/banner.jpg);')
-                .text.text-center
-                  h2 Real Estate 
-                    p Website kiếm bất động sản
-                    p
-                    a.btn.btn-primary(href='/products/load=H78vnx4c') Tìm hiểu
+              .category-wrap-2.ftco-animate.img(style='background-image: url(image/berlin.jpg);')
+                .text.text-center.d-flex.justify-content-center.align-items-center.h-100
+                  a.btn.btn-primary(href='/products/load=H78vnx4c') Tìm hiểu thêm
             .col-md-6
-              .category-wrap.ftco-animate.img.mb-4.d-flex.align-items-end(style='background-image: url(image/cc.jpg);')
-                .text.px-3.py-1
-                  h2.mb-0
-                    a(href='/products/load=KpvL9a4xn') Chung Cư
-              .category-wrap.ftco-animate.img.d-flex.align-items-end(style='background-image: url(image/nr.jpg);')
-                .text.px-3.py-1
-                  h2.mb-0
-                    a(href='/products/load=N0YRx_qf-') Nhà Riêng
+              .category-wrap.ftco-animate.img.mb-4.d-flex.align-items-end(style='background-image: url(image/london.jpg);')
+                //- .text.px-3.py-1
+                //-   h2.mb-0
+                //-     a(href='/products/load=KpvL9a4xn') Chung Cư
+              .category-wrap.ftco-animate.img.d-flex.align-items-end(style='background-image: url(image/madrid.jpg);')
+                //- .text.px-3.py-1
+                //-   h2.mb-0
+                //-     a(href='/products/load=N0YRx_qf-') Nhà Riêng
         .col-md-4
-          .category-wrap.ftco-animate.img.mb-4.d-flex.align-items-end(style='background-image: url(image/cmmn.jpg);')
-            .text.px-3.py-1
-              h2.mb-0
-                a(href='/products/load=YDmRLgWCb') Chung Cư Mini
+          .category-wrap.ftco-animate.img.mb-4.d-flex.align-items-end(style='background-image: url(image/paris.jpg);')
+            //- .text.px-3.py-1
+            //-   h2.mb-0
+            //-     a(href='/products/load=YDmRLgWCb') Chung Cư Mini
           .category-wrap.ftco-animate.img.d-flex.align-items-end(style='background-image: url(image/bt.jpg);')
-            .text.px-3.py-1
-              h2.mb-0
-                a(href='/products/load=z1f7-2DRW') Biệt Thự
+            //- .text.px-3.py-1
+            //-   h2.mb-0
+            //-     a(href='/products/load=z1f7-2DRW') Biệt Thự
   section.ftco-section.ftco-no-pb.ftco-no-pt
     .container
       .row.justify-content-center.mb-2.pb-2
         .col-md-12.heading-section.text-center.ftco-animate
-          span.subheading Chung Cư
+          span.subheading Phòng mới nhất
     .container
       .row.autoplay
         each item in data
@@ -57,88 +65,4 @@ block content
                           i.ion-ios-menu
                       a.heart.d-flex.justify-content-center.align-items-center(href='/crops/like='+item.id)
                         span
-                          i.ion-ios-heart
-  //- section.ftco-section.ftco-no-pb.ftco-no-pt
-  //-   .container
-  //-     .row.justify-content-center.mb-2.pb-2
-  //-       .col-md-12.heading-section.text-center.ftco-animate
-  //-         span.subheading Nhà Riêng
-  //-   .container
-  //-     .row.autoplay
-  //-       each item in data
-  //-         .col-md-6.col-lg-3.ftco-animate
-  //-           .product.product-card
-  //-             a.img-prod.product-card-img(href='/products/id='+item._id)
-  //-               img.img-fluids(src= item.image, alt='Colorlib Template')
-
-  //-             .text.py-3.pb-4.px-3.text-center
-  //-               h3
-  //-                 a(href='#')= item.name
-  //-               .d-flex
-  //-                 .pricing
-  //-                   p.price
-  //-                     span.price-sale Chi tiết
-  //-                 .bottom-area.d-flex.px-3
-  //-                   .m-auto.d-flex
-  //-                     a.add-to-cart.d-flex.justify-content-center.align-items-center.text-center(href='/products/id='+item.id)
-  //-                       span
-  //-                         i.ion-ios-menu
-  //-                     a.heart.d-flex.justify-content-center.align-items-center(href='/crops/like='+item.id)
-  //-                       span
-  //-                         i.ion-ios-heart
-  //- section.ftco-section.ftco-no-pb.ftco-no-pt
-  //-   .container
-  //-     .row.justify-content-center.mb-2.pb-2
-  //-       .col-md-12.heading-section.text-center.ftco-animate
-  //-         span.subheading Chung Cư Mini
-  //-   .container
-  //-     .row.autoplay
-  //-       each item in data
-  //-         .col-md-6.col-lg-3.ftco-animate
-  //-           .product.product-card
-  //-             a.img-prod.product-card-img(href='/products/id='+item._id)
-  //-               img.img-fluids(src= item.image, alt='Colorlib Template')
-
-  //-             .text.py-3.pb-4.px-3.text-center
-  //-               h3
-  //-                 a(href='#')= item.name
-  //-               .d-flex
-  //-                 .pricing
-  //-                   p.price
-  //-                     span.price-sale Chi tiết
-  //-                 .bottom-area.d-flex.px-3
-  //-                   .m-auto.d-flex
-  //-                     a.add-to-cart.d-flex.justify-content-center.align-items-center.text-center(href='/products/id='+item.id)
-  //-                       span
-  //-                         i.ion-ios-menu
-  //-                     a.heart.d-flex.justify-content-center.align-items-center(href='/crops/like='+item.id)
-  //-                       span
-  //-                         i.ion-ios-heart 
-  //- section.ftco-section.ftco-no-pb.ftco-no-pt
-    .container
-      .row.justify-content-center.mb-2.pb-2
-        .col-md-12.heading-section.text-center.ftco-animate
-          span.subheading Biệt Thự
-    .container
-      .row.autoplay
-        each item in data
-          .col-md-6.col-lg-3.ftco-animate
-            .product.product-card
-              a.img-prod.product-card-img(href='/products/id='+item._id)
-                img.img-fluids(src= item.image, alt='Colorlib Template')
-
-              .text.py-3.pb-4.px-3.text-center
-                h3
-                  a(href='#')= item.name
-                .d-flex
-                  .pricing
-                    p.price
-                      span.price-sale Chi tiết
-                  .bottom-area.d-flex.px-3
-                    .m-auto.d-flex
-                      a.add-to-cart.d-flex.justify-content-center.align-items-center.text-center(href='/products/id='+item.id)
-                        span
-                          i.ion-ios-menu
-                      a.heart.d-flex.justify-content-center.align-items-center(href='/crops/like='+item.id)
-                        span
-                          i.ion-ios-heart                                                                                                                                                         
+                          i.ion-ios-heart                                                                                                                                                    
