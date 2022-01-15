@@ -42,73 +42,29 @@ block content
     .container
       .row.justify-content-center.mb-2.pb-2
         .col-md-12.heading-section.text-center.ftco-animate
-          span.subheading Phòng mới nhất
+          .subheading.silde-title 
+            h3 Phòng mới nhất
     .container
       .row
         .owl-carousel
-          .item
-            .product
-              .product-card
-                .product-card-img
-                  a(href='/products/id=')
-                    img(src="image/paris.jpg" alt='Colorlib Template', style= 'width: 100%; object-fit: cover;') 
-          .item
-            .product
-              .product-card
-                .product-card-img
-                  a(href='/products/id=')
-                    img(src="image/paris.jpg" alt='Colorlib Template', style= 'width: 100%; object-fit: cover;') 
-          .item
-            .product
-              .product-card
-                .product-card-img
-                  a(href='/products/id=')
-                    img(src="image/london.jpg" alt='Colorlib Template', style= 'width: 100%; object-fit: cover;')
-                .product-card-info
-                  .info-content
-                    .info-content-name
-                      h4 Volvol delennd 
-                    .info-content-detail
-                      .content-detail-price
-                        p 150$
-                      .content-detail-furniture
-                        p 4
-          .item
-            .product
-              .product-card
-                .product-card-img
-                  a(href='/products/id=')
-                    img(src="image/london.jpg" alt='Colorlib Template', style= 'width: 100%; object-fit: cover;')
-                .product-card-info
-                  .info-content
-                    .info-content-name
-                      h4 Volvol delennd 
-                    .info-content-detail
-                      .content-detail-price
-                        p 150$
-                      .content-detail-furniture
-                        p 4
-                      
-    .container
-      .row.autoplay
-        each item in data
-          .col-md-6.col-lg-3.ftco-animate
-            .product.product-card
-              a.img-prod.product-card-img(href='/products/id='+item._id)
-                img.img-fluids(src= item.image, alt='Colorlib Template', style= 'width: 100%; object-fit: cover;') 
-
-              .text.py-3.pb-4.px-3.text-center
-                h3
-                  a(href='#')= item.name
-                .d-flex
-                  .pricing
-                    p.price
-                      span.price-sale Chi tiết
-                  .bottom-area.d-flex.px-3
-                    .m-auto.d-flex
-                      a.add-to-cart.d-flex.justify-content-center.align-items-center.text-center(href='/products/id='+item.id)
-                        span
-                          i.ion-ios-menu
-                      a.heart.d-flex.justify-content-center.align-items-center(href='/crops/like='+item.id)
-                        span
-                          i.ion-ios-heart                                                                                                                                                    
+          each item in data
+            .item
+              .product
+                .product-card
+                  .product-card-img
+                    a(href='/products/id='+item._id)
+                      img(src=item.image alt='Colorlib Template')
+                  .product-card-info
+                    .info-content
+                      .info-content-name.mt-2
+                        h4= item.name
+                      .info-content-price
+                        p Giá: 
+                          span #{item.price}$
+                      .info-content-detail.d-flex.align-items-center
+                        .content-detail-type
+                          p= item.type
+                        .content-detail-area
+                          p - #{item.area}m²
+                        .content-detail-furniture
+                          p - #{item.furniture}                         

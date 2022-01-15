@@ -69,7 +69,7 @@
 			nav:true,
 			autoplayHoverPause: true,
 			navText : ["<span class='ion-md-arrow-back'></span>","<span class='ion-chevron-right'></span>"],
-			items: 4
+			items: 3
 		})
 
 		$('.home-slider').owlCarousel({
