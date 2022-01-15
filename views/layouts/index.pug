@@ -14,8 +14,8 @@ html(lang="en")
 		link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css")
 		link(rel='stylesheet' href='/css/open-iconic-bootstrap.min.css')
 		link(rel='stylesheet' href='/css/animate.css')
-		link(rel='stylesheet' href='/css/owl.carousel.min.css')
-		link(rel='stylesheet' href='/css/owl.theme.default.min.css')
+		link(rel='stylesheet' href='css/owl.carousel.min.css')
+		link(rel='stylesheet' href='css/owl.theme.default.min.css')
 		link(rel='stylesheet' href='/css/magnific-popup.css')
 		link(rel='stylesheet' href='/css/aos.css')
 		link(rel='stylesheet' href='/css/ionicons.min.css')
@@ -29,34 +29,6 @@ html(lang="en")
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
 
 	body
-		//- .py-1.bg-info
-		//- 	.container
-		//- 		.row.no-gutters.d-flex.align-items-start.align-items-center.px-md-0
-		//- 			.col-lg-12.d-block
-		//- 				.row.d-flex
-		//- 					.col-md.pr-4.d-flex.topper.align-items-center
-		//- 						.icon.mr-2.d-flex.justify-content-center.align-items-center
-		//- 							span.icon-phone2
-		//- 						span.text +84 397 243 603
-		//- 					.col-md.pr-4.d-flex.topper.align-items-center
-		//- 						.icon.mr-2.d-flex.justify-content-center.align-items-center
-		//- 							span.icon-paper-plane
-		//- 						span.text 621173@sv.vnua.edu.vn
-		//- 					.col-md-5.pr-4.d-flex.topper.align-items-center.text-lg-right
-		//- 						if(session)
-		//- 							span.text
-		//- 								span Xin chào, 
-		//- 									span= user.username
-		//- 								span &nbsp;/&nbsp;
-		//- 								span
-		//- 								a(href="/logout" style="color: #fff") Thoát
-		//- 						else
-		//- 							span.text
-		//- 								span
-		//- 									a(href="/register" style="color: #fff") Đăng ký
-		//- 								span &nbsp;/&nbsp;
-		//- 								span
-		//- 								a(href="/auth/login" style="color: #fff") Đăng nhập
 		nav#ftco-navbar.navbar.navbar-expand-lg.navbar-dark.ftco_navbar.bg-dark.ftco-navbar-light.py-2
 			.container
 				a.navbar-brand(href='/')
@@ -76,12 +48,21 @@ html(lang="en")
 						li.nav-item
 							a.nav-link(href='#contact') Liên hệ
 				.nav-login.d-flex.align-items-center.justify-content-between(style="transform: translateY(4px);")
-					span.text
-						span
-							a(href="/register") Đăng ký
-						span &nbsp;|&nbsp;
-						span
-						a(href="/auth/login") Đăng nhập
+					if(user)
+						span.text
+							span Xin chào, 
+								each item in user 
+									span(style="color: black;")= item.fullname
+							span &nbsp;|&nbsp;
+							span
+							a(href="/logout") Đăng xuất
+					else
+						span.text
+							span
+								a(href="/register") Đăng ký
+							span &nbsp;|&nbsp;
+							span
+							a(href="/auth/login") Đăng nhập
 						//- li.nav-item
 						//- 	form.search-form(action='/search' method="GET")
 						//- 		.form-group
@@ -92,13 +73,14 @@ html(lang="en")
 
 		footer#contact.ftco-footer.ftco-section.ftco-no-pb.bg-light
 			.container
+				a.navbar-brand(href='/')
+					img#logo(src="/image/logo.svg" alt="No Images")
 				.row.mb-2
-					.col-md
+					.col-md-4
 						.ftco-footer-widget.mb-4(style="text-align: justify")
-							h2.ftco-heading-2 Nhà cho thuê
-							p Người tìm kiếm bất động sản có thể tìm thấy hầu hết các thông tin, dữ liệu về bất động sản và các tin tức thị trường, phong thủy, kiến trúc cũng như các tư vấn có ích từ Batdongsan.com.vn. Batdongsan.com.vn cũng là đối tác tin cậy và thường xuyên của hầu hết các chủ đầu tư, sàn giao dịch, nhà môi giới cá nhân tại Việt Nam.
+							p HOUSING ANYWHERE Co., Ltd. specializes in helping the Vietnams foreign community with their long- and short-term real estate rental and purchasing needs, including apartments, houses, villas and commercial office space within Ha Noi proper and the surrounding area
 
-					.col-md
+					.col-md-4
 						.ftco-footer-widget.mb-4.ml-md-5
 							h2.ftco-heading-2 Menu
 							ul.list-unstyled
@@ -107,13 +89,13 @@ html(lang="en")
 								li
 									a.py-2.d-block(href='/about') Giới thiệu
 								li
-									a.py-2.d-block(href='/products/load=hvn9B3sea') Nhà cho thuê
+									a.py-2.d-block(href='/products/load=hvn9B3sea') Danh sách
 								li
 									a.py-2.d-block(href='/news') Tin tức
 								li
 									a.py-2.d-block(href='#') Tìm kiếm nâng cao
 
-					.col-md
+					.col-md-4
 						.ftco-footer-widget.mb-4(style="text-align: justify")
 							h2.ftco-heading-2 Thông tin liên hệ
 							.block-23.mb-3
@@ -127,26 +109,14 @@ html(lang="en")
 									li
 										span.icon.icon-envelope
 										span.text 621173@sv.vnua.edu.vn
-							ul.ftco-footer-social.list-unstyled.float-md-left.float-lft.mt-5
-								li.ftco-animate
-									a(href='#')
-										span.icon-twitter
-								li.ftco-animate
-									a(href='#')
-										span.icon-facebook
-								li.ftco-animate
-									a(href='#')
-										span.icon-instagram
-
-
 				.row
-					.col-md-12.text-center
+					.col-md-12.text-center.mb-2
 						span Copyright &copy;
 							script.
 								document.write(new Date().getFullYear());
 						span &nbsp;All rights reserved | This template is made by student VNUA
-				.row.mt-5
-					.col-md-12(style="float: right")
+				.row.d-fixed
+					.col-md-12
 						.mouse
 							a.mouse-icon(href='#')
 								.mouse-wheel

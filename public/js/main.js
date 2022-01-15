@@ -63,6 +63,15 @@
    $.Scrollax();
 
 	var carousel = function() {
+		$('.owl-carousel').owlCarousel({
+			loop:true,
+			margin:20,
+			nav:true,
+			autoplayHoverPause: true,
+			navText : ["<span class='ion-md-arrow-back'></span>","<span class='ion-chevron-right'></span>"],
+			items: 4
+		})
+
 		$('.home-slider').owlCarousel({
 	    loop:true,
 	    autoplay: true,
