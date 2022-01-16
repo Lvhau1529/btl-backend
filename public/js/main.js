@@ -66,10 +66,11 @@
 		$('.owl-carousel').owlCarousel({
 			loop:true,
 			margin:20,
-			nav:true,
+			nav:false,
 			autoplayHoverPause: true,
 			navText : ["<span class='ion-md-arrow-back'></span>","<span class='ion-chevron-right'></span>"],
-			items: 3
+			items: 3,
+			autoplay: true,
 		})
 
 		$('.home-slider').owlCarousel({

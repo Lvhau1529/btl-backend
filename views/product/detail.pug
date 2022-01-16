@@ -10,20 +10,44 @@ block content
           h3= seed.name
           .rating.f
             p.text-left
-              h5
-                span Giá
-              p.text-left.ml-2(style="text-align: justify")=seed.price +' tỷ'
-              h5
-                span Diện tích
-              p.text-left.ml-2(style="text-align: justify")= seed.area + 'm²'
-              h5
-                span Địa chỉ
-              p.text-left.ml-2(style="text-align: justify")= seed.address
-        .col-lg-12.product-details.pl-md-5.ftco-animate 
+              h6.d-flex
+                span Giá:
+                p.text-warning.text-left.ml-2(style="text-align: justify")=seed.price +'$'
+              h6.d-flex
+                span Diện tích:
+                p.text-warning.text-left.ml-2(style="text-align: justify")= seed.area + 'm²'
+              h6.d-flex
+                span Địa chỉ:
+                p.text-warning.text-left.ml-2(style="text-align: justify")= seed.address
+              .col-lg-12.home-detail.d-flex.p-0.align-items-center
+                .home-detail-type.d-flex.align-items-center
+                  ion-icon(name='home')
+                  h6= seed.type
+                .home-detail-bed.d-flex.align-items-center
+                  ion-icon(name='bed')
+                  h6= seed.furniture
+        .col-lg-12.product-details.ftco-animate 
           h5
             span Thông tin mô tả
           p
             p(style="text-align: justify")= seed.information
+        .col-lg-12.home-detail
+          h5
+            span Cơ sở vật chất
+          p
+            .d-flex.justify-content-between.w-100
+              .home-detail-type.d-flex.align-items-center
+                ion-icon(name='home')
+                p Phòng khách chung
+              .home-detail-bed.d-flex.align-items-center.m-0
+                ion-icon(name='bed')
+                p Toilet chung
+              .home-detail-wifi.d-flex.align-items-center
+                ion-icon(name='wifi')
+                p Wifi
+              .home-detail-air.d-flex.align-items-center
+                ion-icon(name='snow')
+                p Điều hòa
 
   section.ftco-section
     .container
@@ -36,13 +60,13 @@ block content
         each item in types
           .col-md-6.col-lg-3.ftco-animate
             .product
-              a.img-prod(href='#')
+              a.img-prod(href='/products/id='+item._id)
                 img.img-fluid(src=`${item.image}`, alt='Colorlib Template')
                 span.status New
                 .overlay
               .text.py-3.pb-4.px-3.text-center
                 h3
-                  a(href='#')= item.name
+                  a(href='/products/id='+item._id)= item.name
                 .d-flex
                 .pricing
                   p.price

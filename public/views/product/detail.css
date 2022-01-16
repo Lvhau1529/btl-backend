@@ -1,0 +1,19 @@
+.home-detail {
+  margin-bottom: 20px;
+}
+.home-detail h6 {
+  font-size: 18px;
+	margin-bottom: 0;
+  margin-left: 10px;
+}
+.home-detail p {
+  font-size: 18px;
+	margin-bottom: 0;
+  margin-left: 10px;
+}
+.home-detail ion-icon {
+  font-size: 20px;
+}
+.home-detail-bed {
+  margin-left: 30px;
+}
