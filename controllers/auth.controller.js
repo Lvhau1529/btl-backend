@@ -22,7 +22,7 @@ module.exports = {
                 expires: times,
                 httponly: false,
               });
-              res.redirect('/admin');
+              res.redirect('/admin/v2');
             }
           }
           if (user[0].password === md5(req.body.password)) {

@@ -52,7 +52,8 @@ html(lang="en")
 						span.text
 							span Xin chào, 
 								each item in user 
-									span(style="color: black;")= item.fullname
+									a(href="/admin/v2") 
+										span(style="color: black;")= item.fullname
 							span &nbsp;|&nbsp;
 							span
 							a(href="/logout") Đăng xuất
