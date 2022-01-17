@@ -6,14 +6,14 @@ block content
 				.col-md-6
 					h2.text-center Đăng ký
 					p.text-center Vui lòng điền đầy đủ thông tin để tạo tài khoản.
-					form(action="/register" method="POST")
+					form(action="/register" method="POST" autocomplete="off")
 						.from-group
 							if(message)
 								.alert.alert-success= message
 						.form-group
 							label(for="user")
 								b Tài khoản
-							input#user(type='text' name='user' placeholder='Nhập tên tài khoản' required)
+							input#user(type='text' name='username' placeholder='Nhập tên tài khoản' required)
 						.form-group
 							label(for='pass')
 								b Mật khẩu
@@ -21,7 +21,7 @@ block content
 						.form-group
 							label(for="fullname") 
 								b Tên
-							input#pass(type='fullname' name='username' placeholder='Nhập tên' required)
+							input#pass(type='fullname' name='fullname' placeholder='Nhập tên' required)
 						.form-group
 							label(for="address") 
 								b Địa chỉ
