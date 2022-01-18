@@ -10,6 +10,7 @@ module.exports = {
       res.render('auth/login');
     }
   },
+  
   postLogin: async (req, res) => {
     const times = new Date(Date.now() + 60 * 60 * 1000);
     Auths.find({ username: req.body.username })

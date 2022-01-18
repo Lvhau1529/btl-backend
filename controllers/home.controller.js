@@ -35,6 +35,7 @@ module.exports = {
       title: 'Register Page - Website about the House'
     });
   },
+  
   postRegister: (req, res) => {
     Auths.create(
       {
